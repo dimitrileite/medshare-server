@@ -1,0 +1,8 @@
+POST http://localhost:3000/providers HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Jonh Smith",
+    "specialty": "Ears",
+    "description": "Doctor that takes care of the heart"
+}
