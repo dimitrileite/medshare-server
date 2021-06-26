@@ -4,16 +4,16 @@ content-type: application/json
 
 {
 
-    "address" : "0xD00000000000000000",
-    "firstname" : "Lucas",
+    "address" : "0xA00000000000000000",
+    "firstname" : "Dimitri",
     "lastname" : "Leite",
-    "birthdate" : "08/18/2021",
+    "birthdate" : "06/18/2021",
     "phone" : "+5561981202811",
-    "email" : "LucasLeite@hotmail.com",
+    "email" : "dimitrileite@hotmail.com",
     "password" : "1520384Cr1",
-    "publickey" : "0xD111111111111111",
-    "privatekey" : "0xD22222222222222",
-    "balance" : "25.00000"
+    "publickey" : "0xA111111111111111",
+    "privatekey" : "0xA22222222222222",
+    "balance" : "40.00000"
 
 }
 
