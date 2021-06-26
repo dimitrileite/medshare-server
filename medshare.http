@@ -1,8 +1,80 @@
-POST http://localhost:3000/providers HTTP/1.1
+### Post
+POST https://medshare-server.glitch.me/api/user/register HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Jonh Smith",
-    "specialty": "Ears",
-    "description": "Doctor that takes care of the heart"
+
+    "address" : "0x100000000000000000",
+    "firstname" : "Dimitri",
+    "lastname" : "Leite",
+    "birthdate" : "06/18/1978",
+    "phone" : "+5561981202811",
+    "email" : "dimitrileite@hotmail.com",
+    "password" : "15203840",
+    "publickey" : "0x1111111111111111",
+    "privatekey" : "0x222222222222222",
+    "balance" : "20.00000"
+
 }
+
+### Post
+POST https://medshare-server.glitch.me/api/users/register HTTP/1.1
+content-type: application/json
+
+{
+
+    "address" : "0x100000000000000000",
+    "firstname" : "Sharlene",
+    "lastname" : "Leite",
+    "birthdate" : "02/19/1988",
+    "phone" : "+5561983404288",
+    "email" : "sharlene_ms@hotmail.com",
+    "password" : "19221988",
+    "publickey" : "0x1a11111111111111",
+    "privatekey" : "0x2a2222222222222",
+    "balance" : "22.00000"
+    
+}
+
+### Get Users
+GET https://medshare-server.glitch.me/api/users HTTP/1.1
+
+### Get User
+GET https://medshare-server.glitch.me/api/users/60d63cf0311f3a190c7fac49 HTTP/1.1
+
+### Get User By Address
+GET https://medshare-server.glitch.me/api/users/address/0x100000000000000000 HTTP/1.1
+
+### Update User
+PATCH https://medshare-server.glitch.me/api/users/update/60d697da280b55053f5fb909 HTTP/1.1
+content-type: application/json
+
+{
+
+    "address" : "0x150000000000000000",
+    "firstname" : "Sharlene",
+    "lastname" : "Leite",
+    "birthdate" : "02/19/1988",
+    "phone" : "+5561983404288",
+    "email" : "sharlene_ms@hotmail.com",
+    "password" : "19221988",
+    "publickey" : "0x1a11111111111111",
+    "privatekey" : "0x2a2222222222222",
+    "balance" : "22.00000"
+    
+}
+
+### Delete User
+DELETE https://medshare-server.glitch.me/api/users/delete/60d697e2280b55053f5fb90b HTTP/1.1
+
+
+
+
+
+### Get Providers
+GET https://medshare-server.glitch.me/providers/60d56c5e13067d369e4bc846 HTTP/1.1
+
+### Delete
+DELETE https://medshare-server.glitch.me/providers/60d56c5e13067d369e4bc846 HTTP/1.1
+
+
