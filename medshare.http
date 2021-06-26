@@ -1,19 +1,19 @@
 ### Post
-POST https://medshare-server.glitch.me/api/user/register HTTP/1.1
+POST http://localhost:3000/api/auth/register HTTP/1.1
 content-type: application/json
 
 {
 
-    "address" : "0x100000000000000000",
-    "firstname" : "Dimitri",
+    "address" : "0xD00000000000000000",
+    "firstname" : "Lucas",
     "lastname" : "Leite",
-    "birthdate" : "06/18/1978",
+    "birthdate" : "08/18/2021",
     "phone" : "+5561981202811",
-    "email" : "dimitrileite@hotmail.com",
-    "password" : "15203840",
-    "publickey" : "0x1111111111111111",
-    "privatekey" : "0x222222222222222",
-    "balance" : "20.00000"
+    "email" : "LucasLeite@hotmail.com",
+    "password" : "1520384Cr1",
+    "publickey" : "0xD111111111111111",
+    "privatekey" : "0xD22222222222222",
+    "balance" : "25.00000"
 
 }
 
@@ -43,7 +43,7 @@ GET https://medshare-server.glitch.me/api/users HTTP/1.1
 GET https://medshare-server.glitch.me/api/users/60d63cf0311f3a190c7fac49 HTTP/1.1
 
 ### Get User By Address
-GET https://medshare-server.glitch.me/api/users/address/0x100000000000000000 HTTP/1.1
+GET https://medshare-server.glitch.me/api/users/address/0x200000000000000000 HTTP/1.1
 
 ### Update User
 PATCH https://medshare-server.glitch.me/api/users/update/60d697da280b55053f5fb909 HTTP/1.1

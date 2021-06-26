@@ -16,15 +16,9 @@ var ProviderSchema = mongoose.Schema({
   contact: {
     type: String,
     required: true
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
-  },
+  }
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model('Provider', ProviderSchema);
