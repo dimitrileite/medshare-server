@@ -17,23 +17,14 @@ content-type: application/json
 
 }
 
-### Post
-POST https://medshare-server.glitch.me/api/users/register HTTP/1.1
+
+### Post Login
+POST http://localhost:3000/api/auth/login HTTP/1.1
 content-type: application/json
 
 {
-
-    "address" : "0x100000000000000000",
-    "firstname" : "Sharlene",
-    "lastname" : "Leite",
-    "birthdate" : "02/19/1988",
-    "phone" : "+5561983404288",
-    "email" : "sharlene_ms@hotmail.com",
-    "password" : "19221988",
-    "publickey" : "0x1a11111111111111",
-    "privatekey" : "0x2a2222222222222",
-    "balance" : "22.00000"
-    
+    "email" : "floripadegodoy@hotmail.com",
+    "password" : "1234567a"
 }
 
 ### Get Users
@@ -66,9 +57,6 @@ content-type: application/json
 
 ### Delete User
 DELETE https://medshare-server.glitch.me/api/users/delete/60d697e2280b55053f5fb90b HTTP/1.1
-
-
-
 
 
 ### Get Providers

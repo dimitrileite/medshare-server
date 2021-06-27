@@ -1,15 +1,15 @@
 const Joi = require('joi');
 
-// Login Validation
-const LoginValidation = (data) => {
-    const LoginSchema = Joi.object({               
-        phone: Joi.string().required(),
-        email: Joi.string().min(6).required().email(),
+// Register Validation
+const loginValidation = (data) => {
+    const loginSchema = Joi.object({        
+        phone: Joi.string(),
+        email: Joi.string().min(6).email(),
         password: Joi.string()
             .pattern(new RegExp('^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,30}$'))
             .required()
-    });
-    return LoginSchema.validate(data);
+    }).xor('phone','email');
+    return loginSchema.validate(data);
 };
 
-module.exports.LoginValidation = LoginValidation;
+module.exports.loginValidation = loginValidation;

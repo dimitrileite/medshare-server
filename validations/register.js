@@ -15,7 +15,7 @@ const registerValidation = (data) => {
         publickey: Joi.string(),
         privatekey: Joi.string(),
         balance: Joi.string()
-    });
+    }).with('email', 'password');
     return registerSchema.validate(data);
 };
 

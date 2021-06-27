@@ -14,10 +14,11 @@ router.get("/", async function (req, res, next) {
 });
 
 /* GET family users */
-router.get('/family/:lastname', async function(req, res, next){
-  var lastname = req.params.lastname;
+router.get('/family/:lastname', async function (req, res, next) {
+
   try {
-    const familyUsers = await User.find({ lastname: lastname}).exec();    
+    const familyUsers = await User.find( { lastname: { $regex: req.params.lastname, $options: 'i' } }) .limit(5)
+    .catch(next);
     res.json(familyUsers);
   } catch (err) {
     res.json({ message: err });
@@ -25,10 +26,10 @@ router.get('/family/:lastname', async function(req, res, next){
 });
 
 /* GET user by address */
-router.get('/address/:address', async function(req, res, next){
+router.get('/address/:address', async function (req, res, next) {
   var address = req.params.address;
   try {
-    const user = await User.findOne({ address: address}).exec();    
+    const user = await User.findOne({ address: address }).exec();
     res.json(user);
   } catch (err) {
     res.json({ message: err });
@@ -45,31 +46,9 @@ router.get("/:id", async function (req, res, next) {
   }
 });
 
-/* POST new User */
-router.post("/register", async function (req, res, next) {
-  const user = new User({
-    address : req.body.address,
-    firstname : req.body.firstname, 
-    lastname : req.body.lastname,
-    birthdate : req.body.birthdate,
-    phone : req.body.phone,
-    email : req.body.email,
-    password : req.body.password,
-    publickey : req.body.publickey,
-    privatekey : req.body.privatekey,
-    balance : req.body.balance,    
-  });
-  try {
-    const savedUser = await user.save();
-    res.json(savedUser);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
-
 
 /* UPDATE user */
-router.patch("/update/:id", async function(req, res, next) {
+router.patch("/update/:id", async function (req, res, next) {
   try {
     const updatedUser = await User.updateOne(
       { _id: req.params.id },
