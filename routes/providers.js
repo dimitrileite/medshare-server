@@ -3,7 +3,7 @@ var router = express.Router();
 var Provider = require("../models/Provider");
 
 /* GET providers listing. */
-router.get("/", async function(req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
     const providers = await Provider.find();
     res.json(providers);
@@ -13,7 +13,7 @@ router.get("/", async function(req, res, next) {
 });
 
 /* GET provider. */
-router.get("/:id", async function(req, res, next) {
+router.get("/:id", async function (req, res, next) {
   try {
     const provider = await Provider.findById(req.params.id);
     res.json(provider);
@@ -23,11 +23,14 @@ router.get("/:id", async function(req, res, next) {
 });
 
 /* POST new Provider. */
-router.post("/", async function(req, res, next) {
+router.post("/", async function (req, res, next) {
   const provider = new Provider({
     name: req.body.name,
     specialty: req.body.specialty,
-    description: req.body.description
+    description: req.body.description,
+    documentation: req.body.documentation,
+    whatsapp: req.body.whatsapp,
+    instagram: req.body.instagram    
   });
   try {
     const savedProvider = await provider.save();
@@ -38,7 +41,7 @@ router.post("/", async function(req, res, next) {
 });
 
 /* UPDATE provider. */
-router.patch("/:id", async function(req, res, next) {
+router.patch("/:id", async function (req, res, next) {
   try {
     const updatedProvider = await Provider.updateOne(
       { _id: req.params.id },
@@ -46,7 +49,10 @@ router.patch("/:id", async function(req, res, next) {
         $set: {
           name: req.body.name,
           specialty: req.body.specialty,
-          description: req.body.description
+          description: req.body.description,
+          documentation: req.body.documentation,
+          whatsapp: req.body.whatsapp,
+          instagram: req.body.instagram,
         }
       }
     );
@@ -57,7 +63,7 @@ router.patch("/:id", async function(req, res, next) {
 });
 
 /* DELETE provider. */
-router.delete("/:id", async function(req, res, next) {
+router.delete("/:id", async function (req, res, next) {
   try {
     const removedProvider = await Provider.remove({ _id: req.params.id });
     res.json(removedProvider);

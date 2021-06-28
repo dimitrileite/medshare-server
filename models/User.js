@@ -10,13 +10,13 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     max: 255,
-    min: 6
+    min: 2
   },
   lastname: {
     type: String,
     required: true,
     max: 255,
-    min: 6
+    min: 2
   },
   birthdate: {
     type: Date,
@@ -36,7 +36,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     min: 1024,
-    min: 6
+    min: 8
   },
   publickey: {
     type: String,

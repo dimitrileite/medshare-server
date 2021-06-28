@@ -13,9 +13,19 @@ var ProviderSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  contact: {
+  documentation: {
     type: String,
     required: true
+  },
+  whatsapp: {
+    type: String
+  },
+  instagram: {
+    type: String    
+  },
+  rating: {
+    type: String,
+    default: 5  
   }
 }, {
   timestamps: true

@@ -48,7 +48,7 @@ router.get("/:id", async function (req, res, next) {
 
 
 /* UPDATE user */
-router.patch("/update/:id", async function (req, res, next) {
+router.patch("/:id", async function (req, res, next) {
   try {
     const updatedUser = await User.updateOne(
       { _id: req.params.id },
