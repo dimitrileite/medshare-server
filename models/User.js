@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 
-/* aflbpeppuprb */
+/* flbpepgk */
 const UserSchema = mongoose.Schema({
-  address: {
-    type: String,
-    required: true
-  },
   firstname: {
     type: String,
     required: true,
@@ -38,15 +34,11 @@ const UserSchema = mongoose.Schema({
     min: 1024,
     min: 8
   },
-  publickey: {
+  gender: {
     type: String,
     required: true
   },
-  privatekey: {
-    type: String,
-    required: true
-  },
-  balance: {
+  keystore: {
     type: String,
     required: true
   }
