@@ -3,7 +3,7 @@ const Joi = require('joi');
 // Register Validation
 const registerValidation = (data) => {
     const registerSchema = Joi.object({        
-        /* address: Joi.string().alphanum().required(), */
+        /* address: Joi.string().alphanum().max(42).required(), */
         firstname: Joi.string().min(2).max(255).required(),
         lastname: Joi.string().min(2).max(255).required(),
         birthdate: Joi.date().required(),
@@ -12,8 +12,8 @@ const registerValidation = (data) => {
         password: Joi.string()
             .pattern(new RegExp('^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,30}$'))
             .required(),
-        gender: Joi.string().required(),
-        keystore: Joi.string().required(),        
+        gender: Joi.string().required()
+        /* keystore: Joi.string().required(),  */       
     }).with('email', 'password');
     return registerSchema.validate(data);
 };
